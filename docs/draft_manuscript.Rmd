@@ -1,0 +1,37 @@
+---
+title: "Palmer Penguins Mini Project"
+author: "Anmol Sandhu"
+output: html_document
+bibliography: references.bib
+---
+
+## Introduction
+
+This project examines morphological variation in penguins using the Palmer Penguins dataset. The primary objective is to assess whether the relationship between flipper length and body mass differs across species.
+
+Reproducible research practices are essential for transparent and reliable scientific findings [@bhattacharya2025].
+
+## Research Question
+
+Does the relationship between flipper length and body mass differ across penguin species?
+
+## Hypothesis
+
+## Methods
+
+### Data Source
+
+Data were obtained from the `palmerpenguins` R package and exported as a raw dataset.
+
+### Data Processing
+
+The processed dataset was created by:
+
+-   Selecting species, flipper_length_mm, and body_mass_g\
+-   Removing observations with missing values
+
+The final processed dataset contains 342 observations and 3 variables.
+
+### Planned Statistical Analysis
+
+## References
