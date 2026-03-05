@@ -1,8 +1,11 @@
 ---
 title: "Palmer Penguins Mini Project"
 author: "Anmol Sandhu"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 bibliography: references.bib
+csl: apa.csl
 ---
 
 ## Introduction
@@ -16,6 +19,8 @@ Reproducible research practices are essential for transparent and reliable scien
 Does the relationship between flipper length and body mass differ across penguin species?
 
 ## Hypothesis
+
+The relationship between flipper length and body mass differs among Adelie, Chinstrap, and Gentoo penguins. Specifically, species with longer flippers are expected to have greater body mass, but the strength of this relationship will vary among species.
 
 ## Methods
 
@@ -33,5 +38,32 @@ The processed dataset was created by:
 The final processed dataset contains 342 observations and 3 variables.
 
 ### Planned Statistical Analysis
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+penguins <- read.csv("../data/data_processed/penguins_processed.csv")
+
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point() +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    title = "Relationship between Flipper Length and Body Mass Across Penguin Species"
+  )
+```
+
+Figure 1. Relationship between flipper length and body mass across penguin species.
+
+To evaluate whether the relationship between flipper length and body mass differs among species, a linear regression model including an interaction between flipper length and species was fitted.
+
+```{r echo=FALSE}
+model <- lm(body_mass_g ~ flipper_length_mm * species, data = penguins)
+summary(model)
+```
+
+Table 1. Linear regression model examining the interaction between flipper length and species on penguin body mass.
+
+The interaction between flipper length and species was significant for Gentoo penguins (p = 0.00184), indicating that the relationship between flipper length and body mass differs among species.
 
 ## References
