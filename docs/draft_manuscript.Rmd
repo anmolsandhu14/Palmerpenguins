@@ -3,7 +3,6 @@ title: "Palmer Penguins Mini Project"
 author: "Anmol Sandhu"
 output:
   pdf_document: default
-  html_document: default
 bibliography: references.bib
 csl: apa.csl
 ---
@@ -48,8 +47,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   geom_point() +
   labs(
     x = "Flipper Length (mm)",
-    y = "Body Mass (g)",
-    title = "Relationship between Flipper Length and Body Mass Across Penguin Species"
+    y = "Body Mass (g)"
   )
 ```
 
@@ -58,11 +56,14 @@ Figure 1. Relationship between flipper length and body mass across penguin speci
 To evaluate whether the relationship between flipper length and body mass differs among species, a linear regression model including an interaction between flipper length and species was fitted.
 
 ```{r echo=FALSE}
-model <- lm(body_mass_g ~ flipper_length_mm * species, data = penguins)
-summary(model)
-```
+library(broom)
+library(knitr)
 
-Table 1. Linear regression model examining the interaction between flipper length and species on penguin body mass.
+model <- lm(body_mass_g ~ flipper_length_mm * species, data = penguins)
+
+tidy(model) |> 
+  kable(caption = " Linear regression model examining the interaction between flipper length and species on penguin body mass.")
+```
 
 The interaction between flipper length and species was significant for Gentoo penguins (p = 0.00184), indicating that the relationship between flipper length and body mass differs among species.
 
