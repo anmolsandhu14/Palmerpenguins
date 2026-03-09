@@ -1,29 +1,13 @@
 # Data Management Plan
 
-## Data Source
-Data for this project come from the palmerpenguins R package.
+## Data Collection
+Data for this project are obtained from the publicly available Palmer Penguins dataset distributed through the palmerpenguins R package. The dataset includes morphological measurements of penguins collected at Palmer Station, Antarctica. No new data were collected for this project.
 
-## Raw Data Storage
-Raw data are stored in the directory:
-data/data_raw/
+## Documentation and Metadata
+All variables and data processing steps are documented using data dictionaries stored within the project directory. Separate DATA_DICTIONARY.md files describe the variables in the raw dataset and the processed dataset. Project documentation is also provided through the README.md file in the root directory.
 
-## Processed Data
-Cleaned datasets used for analysis are stored in:
-data/data_processed/
+## Storage, Backup, Data Security and Access Management
+Project files are stored locally within an RStudio project directory and are version controlled using GitHub. A copy of the project is also stored on the Open Science Framework (OSF) to provide additional backup and project sharing. The dataset used is publicly available and contains no sensitive or confidential information.
 
-## Data Processing
-Data processing steps include:
-- selecting relevant variables
-- removing observations with missing values
-
-## File Organization
-The project follows a structured directory system including folders for raw data, processed data, and analysis documents.
-
-## Version Control
-Version control for this project is managed through GitHub.
-
-## Backup and Storage
-Project files are stored locally and synced with GitHub and OSF to ensure backups.
-
-## Data Sharing
-The dataset used in this project is publicly available and contains no sensitive information.
+## Deposit, Reuse, and Preservation
+The project materials including code, documentation, and processed datasets are archived within the OSF project. The GitHub repository provides version control and public access to the project files. The dataset itself is publicly available through the palmerpenguins R package and can be reused by other researchers.
