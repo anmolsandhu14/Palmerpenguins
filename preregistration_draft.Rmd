@@ -1,0 +1,65 @@
+---
+title: "preregistration_draft"
+author: "Anmol Sandhu"
+date: "2026-03-10"
+output: pdf_document
+---
+
+# Draft Pre-registration
+
+## 1 Research Question
+
+Does the relationship between flipper length and body mass differ across penguin species?
+
+## 2 Study Design
+
+This study uses an observational dataset from the Palmer Penguins dataset available in the palmerpenguins R package. The dataset contains morphological measurements of penguins including species, flipper length, and body mass.
+
+No experimental manipulation or random assignment is involved. The study analyzes naturally occurring variation in penguin morphology.
+
+## 3 Variables
+
+### Response Variable
+
+body_mass_g\
+Penguin body mass measured in grams.
+
+### Predictor Variable
+
+flipper_length_mm\
+Penguin flipper length measured in millimeters.
+
+### Grouping Variable
+
+species\
+Categorical variable identifying penguin species (Adelie, Chinstrap, Gentoo).
+
+## 4 Hypothesis
+
+The relationship between flipper length and body mass differs among penguin species. Penguins with longer flippers are expected to have greater body mass, but the strength of this relationship may vary among species.
+
+## 5 Data Processing
+
+The processed dataset will be created by:
+
+• selecting the variables species, flipper_length_mm, and body_mass_g\
+• removing observations with missing values
+
+## 6 Analysis Plan
+
+To test whether the relationship between flipper length and body mass differs across species, a linear regression model including an interaction term will be fitted:
+
+body_mass_g \~ flipper_length_mm \* species
+
+In this model:
+
+• body_mass_g is the response variable\
+• flipper_length_mm is the continuous predictor\
+• species is a categorical predictor\
+• the interaction term tests whether the slope between flipper length and body mass differs across species
+
+A scatterplot of flipper length versus body mass colored by species will also be produced to visualize the relationship between variables.
+
+## 7 Deviations from the Plan
+
+Any deviations from this analysis plan will be documented and justified in the final manuscript.

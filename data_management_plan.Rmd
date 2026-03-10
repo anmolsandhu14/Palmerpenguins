@@ -1,0 +1,63 @@
+---
+title: "data_management_plan"
+author: "Anmol Sandhu"
+date: "2026-03-10"
+output: pdf_document
+---
+
+# Data Management Plan
+
+## 1 Data Collection
+
+The data used in this project are obtained from the publicly available **Palmer Penguins dataset** provided through the `palmerpenguins` R package. The dataset contains morphological measurements of penguins collected at Palmer Station, Antarctica.
+
+For this project, the raw dataset was exported and stored in the project directory under:
+
+data/data_raw/
+
+The processed dataset was created by selecting relevant variables and removing observations with missing values. The cleaned dataset is stored in:
+
+data/data_processed/
+
+No new data were collected for this study.
+
+------------------------------------------------------------------------
+
+## 2 Documentation and Metadata
+
+Documentation for this project is provided through multiple files to ensure transparency and reproducibility.
+
+Project documentation includes:
+
+-   **README.md** in the root directory describing the project structure and objectives.
+-   **DATA_DICTIONARY.md** files within both the raw and processed data folders describing the variables contained in each dataset.
+-   An **R Markdown manuscript** documenting the analysis workflow.
+
+These files provide metadata describing variable definitions, data processing steps, and analysis procedures.
+
+------------------------------------------------------------------------
+
+## 3 Storage, Backup, and Data Access Management
+
+Project files are stored locally within an RStudio project directory and organized into structured folders including:
+
+-   `data/`
+-   `docs/`
+-   project documentation files
+
+Version control is managed through **GitHub**, which tracks all changes to project files and provides a remote backup of the working directory.
+
+An additional copy of the project files is stored on the **Open Science Framework (OSF)**, providing an external backup and facilitating project sharing.
+
+The dataset used in this project is publicly available and contains no sensitive or confidential information.
+
+------------------------------------------------------------------------
+
+## 4 Deposit, Reuse, and Preservation
+
+All project materials including documentation, analysis code, and processed datasets are preserved through the OSF project repository.
+
+The GitHub repository provides version-controlled access to the project files and ensures that previous versions of the analysis workflow are preserved.
+
+The Palmer Penguins dataset itself is publicly available through the `palmerpenguins` R package and can be reused by other researchers following the package documentation.
+
