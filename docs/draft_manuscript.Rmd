@@ -3,6 +3,8 @@ title: "Palmer Penguins Mini Project"
 author: "Anmol Sandhu"
 output:
   pdf_document: default
+  html_document:
+    df_print: paged
 bibliography: references.bib
 csl: apa.csl
 ---
@@ -38,7 +40,7 @@ The final processed dataset contains 342 observations and 3 variables.
 
 ### Planned Statistical Analysis
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE}
 library(ggplot2)
 
 penguins <- read.csv("../data/data_processed/penguins_processed.csv")
@@ -55,9 +57,9 @@ Figure 1. Relationship between flipper length and body mass across penguin speci
 
 To evaluate whether the relationship between flipper length and body mass differs among species, a linear regression model including an interaction between flipper length and species was fitted.
 
-```{r echo=FALSE}
-library(broom)
+```{r}
 library(knitr)
+library(broom)
 
 model <- lm(body_mass_g ~ flipper_length_mm * species, data = penguins)
 

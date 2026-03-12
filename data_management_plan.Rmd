@@ -60,4 +60,3 @@ All project materials including documentation, analysis code, and processed data
 The GitHub repository provides version-controlled access to the project files and ensures that previous versions of the analysis workflow are preserved.
 
 The Palmer Penguins dataset itself is publicly available through the `palmerpenguins` R package and can be reused by other researchers following the package documentation.
-
