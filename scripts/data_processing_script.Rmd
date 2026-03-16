@@ -1,0 +1,96 @@
+---
+title: "data_processing"
+author: "Anmol Sandhu"
+date: "2026-03-16"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Data Processing Script
+
+Purpose: Import raw data and create processed dataset
+
+## Load the required package
+
+```{r}
+library(dplyr)
+library(palmerpenguins)
+```
+
+## Load dataset from package
+
+```{r}
+penguins_raw <- palmerpenguins::penguins
+```
+
+## Save raw dataset
+
+```{r}
+write.csv(
+  penguins_raw,
+  "data/data_raw/penguins_raw.csv",
+  row.names = FALSE
+)
+```
+
+## Verify raw dataset
+
+```{r}
+raw_check <- read.csv("data/data_raw/penguins_raw.csv")
+
+cat("Raw dataset dimensions:\n")
+print(dim(raw_check))
+
+cat("Raw dataset column names:\n")
+print(colnames(raw_check))
+
+cat("Missing values in raw dataset:\n")
+print(sum(is.na(raw_check)))
+
+```
+
+Expected: 344 rows 8 columns 19 missing values
+
+## Create Processed Dataset
+
+```{r}
+penguins_processed <- raw_check %>%
+  select(
+    species,
+    flipper_length_mm,
+    body_mass_g
+  ) %>%
+  filter(
+    !is.na(species),
+    !is.na(flipper_length_mm),
+    !is.na(body_mass_g)
+  )
+
+```
+
+## Verify processed data
+
+```{r}
+cat("Processed dataset dimensions:\n")
+print(dim(penguins_processed))
+
+cat("Missing values in processed dataset:\n")
+print(sum(is.na(penguins_processed)))
+```
+
+Expected: 342 rows 3 columns 0 missing values
+
+## Save processed data
+
+```{r}
+write.csv(
+  penguins_processed,
+  "data/data_processed/penguins_processed.csv",
+  row.names = FALSE
+)
+```
+
+# End of Script
