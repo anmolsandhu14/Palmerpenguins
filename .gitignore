@@ -11,7 +11,7 @@
 .Ruserdata
 
 # R profile
-.Rprofile
+#.Rprofile
 
 # Example code in package build process
 *-Ex.R
@@ -22,7 +22,9 @@
 # don't store data; we'll use proper data repo
 #/data
 #/renv
-renv/library
+renv/library/
+renv/staging/
+renv/local/   
 
 # Output files from R CMD check
 /*.Rcheck/
