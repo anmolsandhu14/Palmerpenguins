@@ -21,7 +21,8 @@
 
 # don't store data; we'll use proper data repo
 #/data
-/renv
+#/renv
+renv/library
 
 # Output files from R CMD check
 /*.Rcheck/
