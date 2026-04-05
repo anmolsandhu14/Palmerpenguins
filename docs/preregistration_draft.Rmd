@@ -42,8 +42,10 @@ The relationship between flipper length and body mass differs among penguin spec
 
 The processed dataset will be created by:
 
-• selecting the variables species, flipper_length_mm, and body_mass_g\
-• removing observations with missing values
+-   selecting the variables species, flipper_length_mm, and body_mass_g\
+-   removing observations with missing values
+
+The final processed dataset will contain 342 observations.
 
 ## 6 Analysis Plan
 
@@ -53,10 +55,10 @@ body_mass_g \~ flipper_length_mm \* species
 
 In this model:
 
-• body_mass_g is the response variable\
-• flipper_length_mm is the continuous predictor\
-• species is a categorical predictor\
-• the interaction term tests whether the slope between flipper length and body mass differs across species
+-   body_mass_g is the response variable\
+-   flipper_length_mm is the continuous predictor\
+-   species is a categorical predictor\
+-   the interaction term tests whether the slope between flipper length and body mass differs across species
 
 A scatterplot of flipper length versus body mass colored by species will also be produced to visualize the relationship between variables.
 
