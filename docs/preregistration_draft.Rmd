@@ -1,11 +1,11 @@
 ---
-title: "preregistration_draft"
+title: "Pre-registration"
 author: "Anmol Sandhu"
 date: "2026-03-10"
 output: pdf_document
 ---
 
-# Draft Pre-registration
+# Pre-registration
 
 ## 1 Research Question
 
