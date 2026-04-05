@@ -11,7 +11,7 @@ csl: apa.csl
 
 This project examines morphological variation in penguins using the Palmer Penguins dataset. The primary objective is to assess whether the relationship between flipper length and body mass differs across species.
 
-Reproducible research practices are essential for transparent and reliable scientific findings [@bhattacharya2025].
+Reproducible research practices are essential for transparent and reliable scientific findings.
 
 ## Research Question
 
@@ -21,24 +21,24 @@ Does the relationship between flipper length and body mass differ across penguin
 
 The relationship between flipper length and body mass differs among Adelie, Chinstrap, and Gentoo penguins. Specifically, species with longer flippers are expected to have greater body mass, but the strength of this relationship will vary among species.
 
-## Methods
+## Data and Methods
 
 ### Data Source
 
-Data were obtained from the `palmerpenguins` R package and exported as a raw dataset.
+Data were obtained from the `palmerpenguins` R package [@gorman] and exported as a raw dataset.
 
 ### Data Processing
 
 The processed dataset was created by:
 
--   Selecting species, flipper_length_mm, and body_mass_g\
+-   Selecting species, flipper_length_mm, and body_mass_g
 -   Removing observations with missing values
 
 The final processed dataset contains 342 observations and 3 variables.
 
-### Planned Statistical Analysis
+## Results
 
-```{r message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(ggplot2)
 
 penguins <- read.csv("../data/data_processed/penguins_processed.csv")
@@ -55,16 +55,20 @@ Figure 1. Relationship between flipper length and body mass across penguin speci
 
 To evaluate whether the relationship between flipper length and body mass differs among species, a linear regression model including an interaction between flipper length and species was fitted.
 
-```{r}
+```{r echo=FALSE}
 library(knitr)
 library(broom)
 
 model <- lm(body_mass_g ~ flipper_length_mm * species, data = penguins)
 
 tidy(model) |> 
-  kable(caption = " Linear regression model examining the interaction between flipper length and species on penguin body mass.")
+  kable(caption = "Linear regression model examining the interaction between flipper length and species on penguin body mass.")
 ```
 
 The interaction between flipper length and species was significant for Gentoo penguins (p = 0.00184), indicating that the relationship between flipper length and body mass differs among species.
+
+These results indicate that the relationship between flipper length and body mass is not consistent across species. In particular, Gentoo penguins exhibit a stronger positive association compared to the other species.
+
+Model assumptions including linearity, homoscedasticity, and normality of residuals were assessed and were found to be reasonably satisfied.
 
 ## References
