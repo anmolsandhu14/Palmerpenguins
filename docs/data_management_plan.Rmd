@@ -21,8 +21,6 @@ data/data_processed/
 
 No new data were collected for this study.
 
-------------------------------------------------------------------------
-
 ## 2 Documentation and Metadata
 
 Documentation for this project is provided through multiple files to ensure transparency and reproducibility.
@@ -35,9 +33,7 @@ Project documentation includes:
 
 These files provide metadata describing variable definitions, data processing steps, and analysis procedures.
 
-------------------------------------------------------------------------
-
-## 3 Storage, Backup, and Data Access Management
+## 3 Storage, Backup, Data Security and Access Management
 
 Project files are stored locally within an RStudio project directory and organized into structured folders including:
 
@@ -49,9 +45,9 @@ Version control is managed through **GitHub**, which tracks all changes to proje
 
 An additional copy of the project files is stored on the **Open Science Framework (OSF)**, providing an external backup and facilitating project sharing.
 
-The dataset used in this project is publicly available and contains no sensitive or confidential information.
+Package management is handled using the `renv` package, which ensures that all required R packages and versions can be restored for reproducibility.
 
-------------------------------------------------------------------------
+The dataset used in this project is publicly available and contains no sensitive or confidential information.
 
 ## 4 Deposit, Reuse, and Preservation
 
